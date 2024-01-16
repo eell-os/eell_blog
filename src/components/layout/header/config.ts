@@ -32,21 +32,21 @@ export const headerMenuConfig: IHeaderMenu[] = [
     subMenu: [],
   },
   {
-    title: '文稿',
+    title: '文章',
     path: '/posts',
     type: 'Post',
     subMenu: [],
     icon: h(IcTwotoneSignpost),
   },
   {
-    title: '手记',
+    title: '笔记',
     type: 'Note',
     path: '/notes',
     icon: h(FaSolidFeatherAlt),
   },
 
   {
-    title: '速览',
+    title: '时光',
     icon: h(FaSolidHistory),
     path: '/timeline',
     subMenu: [
