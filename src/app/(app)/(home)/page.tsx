@@ -227,9 +227,9 @@ const PostScreen = () => {
           transition={softSpringPreset}
           className="text-3xl font-medium leading-loose"
         >
-          这里是我的技术乐园,
+          这里是我的技术乐园,记录我所有技术的瞬间
           <br />
-          记录我所有技术的瞬间
+          将会充满前进的希望,尽管前行的道路坎坷...
         </m.h2>
         <div>
           <ul className="space-y-4">
