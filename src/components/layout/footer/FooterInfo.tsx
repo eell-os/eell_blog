@@ -104,11 +104,11 @@ const PoweredBy: Component = ({ className }) => {
     <span className={className}>
       Powered by{' '}
       <StyledLink href="https://github.com/mx-space" target="_blank">
-        Mix Space 
+        Mix Space  &nbsp;
       </StyledLink>
       and 
       <StyledLink href="https://github.com/innei/Shiro" target="_blank">
-        Shiro
+       &nbsp; Shiro
       </StyledLink>
       .
     </span>
