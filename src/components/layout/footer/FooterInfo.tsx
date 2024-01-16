@@ -106,7 +106,7 @@ const PoweredBy: Component = ({ className }) => {
       <StyledLink href="https://github.com/mx-space" target="_blank">
         Mix Space
       </StyledLink>
-       and
+      and
       <StyledLink href="https://github.com/innei/Shiro" target="_blank">
         Shiro
       </StyledLink>
@@ -169,10 +169,6 @@ const FooterBottom = async () => {
             <Divider className="inline" />
           </SubscribeTextButton>
         </span>
-        <span className="mt-3 block md:mt-0 md:inline">
-          Stay hungry. Stay foolish.
-        </span>
-          </span>
         <span className="mt-3 block md:mt-0 md:inline">
           萌ICP备20227416号
         </span>
