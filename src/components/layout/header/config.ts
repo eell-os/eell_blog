@@ -32,21 +32,21 @@ export const headerMenuConfig: IHeaderMenu[] = [
     subMenu: [],
   },
   {
-    title: '文稿',
+    title: '文章',
     path: '/posts',
     type: 'Post',
     subMenu: [],
     icon: h(IcTwotoneSignpost),
   },
   {
-    title: '手记',
+    title: '笔记',
     type: 'Note',
     path: '/notes',
     icon: h(FaSolidFeatherAlt),
   },
 
   {
-    title: '速览',
+    title: '时光',
     icon: h(FaSolidHistory),
     path: '/timeline',
     subMenu: [
@@ -99,11 +99,6 @@ export const headerMenuConfig: IHeaderMenu[] = [
         title: '一言',
         path: '/says',
         icon: h(FaSolidComments),
-      },
-      {
-        title: '跃迁',
-        icon: h(RMixPlanet),
-        path: 'https://travel.moe/go.html',
       },
     ],
   },
