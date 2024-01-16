@@ -101,9 +101,9 @@ export const headerMenuConfig: IHeaderMenu[] = [
         icon: h(FaSolidComments),
       },
       {
-        title: '网盘',
+        title: '跃迁',
         icon: h(RMixPlanet),
-        path: 'https://pan.eell.pro',
+        path: 'https://travel.moe/go.html',
       },
     ],
   },
