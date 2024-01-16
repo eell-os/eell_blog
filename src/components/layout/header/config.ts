@@ -13,6 +13,7 @@ import {
   IonBook,
   MdiFlask,
   MdiLightbulbOn20,
+  RMixPlanet,
 } from '~/components/icons/menu-collection'
 
 export interface IHeaderMenu {
@@ -31,21 +32,21 @@ export const headerMenuConfig: IHeaderMenu[] = [
     subMenu: [],
   },
   {
-    title: '文章',
+    title: '文稿',
     path: '/posts',
     type: 'Post',
     subMenu: [],
     icon: h(IcTwotoneSignpost),
   },
   {
-    title: '笔记',
+    title: '手记',
     type: 'Note',
     path: '/notes',
     icon: h(FaSolidFeatherAlt),
   },
 
   {
-    title: '时光',
+    title: '速览',
     icon: h(FaSolidHistory),
     path: '/timeline',
     subMenu: [
@@ -98,6 +99,11 @@ export const headerMenuConfig: IHeaderMenu[] = [
         title: '一言',
         path: '/says',
         icon: h(FaSolidComments),
+      },
+      {
+        title: '网盘',
+        icon: h(RMixPlanet),
+        path: 'https://pan.eell.pro',
       },
     ],
   },
