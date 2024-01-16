@@ -71,6 +71,7 @@ export default function Home() {
       <PostScreen />
 
       <NoteScreen />
+      <FriendScreen />
       <MoreScreen />
     </div>
   )
@@ -229,7 +230,7 @@ const PostScreen = () => {
         >
           这里是我的技术乐园,
           <br />
-          记录我所有的成长瞬间
+          记录我所有成长的瞬间
         </m.h2>
         <div>
           <ul className="space-y-4">
@@ -459,6 +460,90 @@ const NoteScreen = () => {
           一个在生活中发现美，感受痛苦，洞察人性的我。
         </m.h2>
       </TwoColumnLayout>
+    </Screen>
+  )
+}
+
+const FriendScreen = () => {
+  const { data } = useQuery({
+    queryKey: ['friends'],
+    queryFn: async () => {
+      return apiClient.friend.getAll().then((res) => {
+        return res.data
+      })
+    },
+    select: useCallback((data: LinkModel[]) => {
+      return shuffle(
+        data.filter(
+          (i) =>
+            i.type === LinkType.Friend && i.state === LinkState.Pass && !i.hide,
+        ),
+      ).slice(0, 20)
+    }, []),
+    staleTime: 1000 * 60 * 10,
+  })
+  return (
+    <Screen className="flex h-auto min-h-[100vh] center">
+      <div className="flex min-w-0 flex-col">
+        <BottomToUpTransitionView className="text-center text-3xl font-medium">
+          这些是我珍视的人，他们陪伴我走过人生的每一段旅程。
+        </BottomToUpTransitionView>
+        <ul
+          className={clsx(
+            'mt-12 grid max-w-5xl grid-cols-3 gap-10 p-4 md:grid-cols-4 lg:grid-cols-5 lg:p-0',
+
+            'min-w-0 [&>*]:flex [&>*]:flex-col [&>*]:center',
+          )}
+        >
+          {data?.map((friend, i) => {
+            return (
+              <li key={friend.id} className="min-w-0 max-w-full">
+                <m.div
+                  initial={{ scale: 0.001, opacity: 0.0001 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{
+                    delay: i * 0.1 + 0.3,
+                    ...softBouncePreset,
+                  }}
+                  className="w-full min-w-0"
+                >
+                  <a
+                    href={friend.url}
+                    className="flex w-full min-w-0 flex-col center"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div
+                      className="aspect-square h-[80px] w-[80px] rounded-full bg-contain bg-center ring-1 ring-slate-200/80 dark:bg-neutral-800/80"
+                      style={{
+                        backgroundImage: `url(${friend.avatar})`,
+                      }}
+                      aria-hidden
+                    />
+                    <span className="mt-5 w-full min-w-0 truncate text-center">
+                      {friend.name}
+                    </span>
+                  </a>
+                </m.div>
+              </li>
+            )
+          })}
+        </ul>
+
+        <BottomToUpTransitionView
+          delay={1500}
+          className="mt-16 w-full text-center"
+        >
+          <MotionButtonBase>
+            <Link
+              className="shiro-link--underline"
+              href={routeBuilder(Routes.Friends, {})}
+            >
+              还有更多，要不要看看？
+            </Link>
+          </MotionButtonBase>
+        </BottomToUpTransitionView>
+      </div>
     </Screen>
   )
 }
