@@ -80,6 +80,29 @@ export const headerMenuConfig: IHeaderMenu[] = [
     path: '/friends',
   },
 
+    {
+    title: '网站',
+    icon: h(RMixPlanet),
+    path: '#',
+    subMenu: [
+      {
+        title: '网盘',
+        icon: h(RMixPlanet),
+        path: 'https://pan.eell.pro',
+      },
+      {
+        title: '图床',
+        icon: h(RMixPlanet),
+        path: 'https://image.eell.pro',
+      },
+      {
+        title: '导航',
+        icon: h(RMixPlanet),
+        path: 'https://link.eell.pro',
+      },
+    ],
+  },
+  
   {
     title: '更多',
     icon: h(FaSolidCircleNotch),
@@ -100,29 +123,6 @@ export const headerMenuConfig: IHeaderMenu[] = [
         path: '/says',
         icon: h(FaSolidComments),
       },
-      {
-        title: '网盘',
-        icon: h(RMixPlanet),
-        path: 'https://pan.eell.pro',
-      },
-      {
-        title: '图床',
-        icon: h(RMixPlanet),
-        path: 'https://image.eell.pro',
-      },
-      {
-        title: '导航',
-        icon: h(RMixPlanet),
-        path: 'https://link.eell.pro',
-      },
-    ],
-  },
-
-  {
-    title: '网站',
-    icon: h(RMixPlanet),
-    path: '#',
-    subMenu: [
       {
         title: '网盘',
         icon: h(RMixPlanet),
