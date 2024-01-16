@@ -202,6 +202,9 @@ const Welcome = () => {
             'text-neutral-800/80 center dark:text-neutral-200/80',
           )}
         >
+          <small>
+            当第一颗卫星飞向大气层外，我们便以为自己终有一日会征服宇宙。
+          </small>
           <span className="mt-8 animate-bounce">
             <i className="icon-[mingcute--right-line] rotate-90 text-2xl" />
           </span>
@@ -228,9 +231,9 @@ const PostScreen = () => {
           transition={softSpringPreset}
           className="text-3xl font-medium leading-loose"
         >
-          这里是我的技术乐园,
+          这里或许有那么一些对于生活的感慨
           <br />
-          记录我所有成长的瞬间
+          也或许有那么一些对于技术的记录。
         </m.h2>
         <div>
           <ul className="space-y-4">
