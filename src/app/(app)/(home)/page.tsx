@@ -1,10 +1,14 @@
 'use client'
 
+import { useQuery } from '@tanstack/react-query'
+import React, { createElement, forwardRef, useCallback, useRef } from 'react'
 import clsx from 'clsx'
 import { m, useInView } from 'framer-motion'
 import Link from 'next/link'
+import type { LinkModel } from '@mx-space/api-client'
 import type { PropsWithChildren } from 'react'
 
+import { LinkState, LinkType } from '@mx-space/api-client'
 
 import { isSupportIcon, SocialIcon } from '~/components/modules/home/SocialIcon'
 import { PeekLink } from '~/components/modules/peek/PeekLink'
@@ -18,9 +22,11 @@ import {
   softBouncePreset,
   softSpringPreset,
 } from '~/constants/spring'
+import { shuffle } from '~/lib/_'
 import { isDev } from '~/lib/env'
 import { clsxm } from '~/lib/helper'
 import { noopObj } from '~/lib/noop'
+import { apiClient } from '~/lib/request'
 import { routeBuilder, Routes } from '~/lib/route-builder'
 import {
   useAggregationSelector,
@@ -455,26 +461,6 @@ const NoteScreen = () => {
       </TwoColumnLayout>
     </Screen>
   )
-}
-
-const FriendScreen = () => {
-  const { data } = useQuery({
-    queryKey: ['friends'],
-    queryFn: async () => {
-      return apiClient.friend.getAll().then((res) => {
-        return res.data
-      })
-    },
-    select: useCallback((data: LinkModel[]) => {
-      return shuffle(
-        data.filter(
-          (i) =>
-            i.type === LinkType.Friend && i.state === LinkState.Pass && !i.hide,
-        ),
-      ).slice(0, 20)
-    }, []),
-    staleTime: 1000 * 60 * 10,
-  })
 }
 
 const MoreScreen = () => {
