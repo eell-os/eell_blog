@@ -13,7 +13,6 @@ import {
   IonBook,
   MdiFlask,
   MdiLightbulbOn20,
-  RMixPlanet,
 } from '~/components/icons/menu-collection'
 
 export interface IHeaderMenu {
