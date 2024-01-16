@@ -228,9 +228,9 @@ const PostScreen = () => {
           transition={softSpringPreset}
           className="text-3xl font-medium leading-loose"
         >
-          俺是一个乐于分享的人,
+          这里是我的技术乐园,
           <br />
-          记录我技术成长的瞬间。
+          记录我所有的成长瞬间
         </m.h2>
         <div>
           <ul className="space-y-4">
@@ -314,25 +314,6 @@ const PostScreen = () => {
     </Screen>
   )
 }
-
-const FriendScreen = () => {
-  const { data } = useQuery({
-    queryKey: ['friends'],
-    queryFn: async () => {
-      return apiClient.friend.getAll().then((res) => {
-        return res.data
-      })
-    },
-    select: useCallback((data: LinkModel[]) => {
-      return shuffle(
-        data.filter(
-          (i) =>
-            i.type === LinkType.Friend && i.state === LinkState.Pass && !i.hide,
-        ),
-      ).slice(0, 20)
-    }, []),
-    staleTime: 1000 * 60 * 10,
-  })
 
 const NoteScreen = () => {
   const { notes } = useHomeQueryData()
@@ -481,6 +462,26 @@ const NoteScreen = () => {
       </TwoColumnLayout>
     </Screen>
   )
+}
+
+const FriendScreen = () => {
+  const { data } = useQuery({
+    queryKey: ['friends'],
+    queryFn: async () => {
+      return apiClient.friend.getAll().then((res) => {
+        return res.data
+      })
+    },
+    select: useCallback((data: LinkModel[]) => {
+      return shuffle(
+        data.filter(
+          (i) =>
+            i.type === LinkType.Friend && i.state === LinkState.Pass && !i.hide,
+        ),
+      ).slice(0, 20)
+    }, []),
+    staleTime: 1000 * 60 * 10,
+  })
 }
 
 const MoreScreen = () => {
