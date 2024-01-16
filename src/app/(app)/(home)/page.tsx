@@ -315,6 +315,25 @@ const PostScreen = () => {
   )
 }
 
+const FriendScreen = () => {
+  const { data } = useQuery({
+    queryKey: ['friends'],
+    queryFn: async () => {
+      return apiClient.friend.getAll().then((res) => {
+        return res.data
+      })
+    },
+    select: useCallback((data: LinkModel[]) => {
+      return shuffle(
+        data.filter(
+          (i) =>
+            i.type === LinkType.Friend && i.state === LinkState.Pass && !i.hide,
+        ),
+      ).slice(0, 20)
+    }, []),
+    staleTime: 1000 * 60 * 10,
+  })
+
 const NoteScreen = () => {
   const { notes } = useHomeQueryData()
   const theLast = notes[0]
