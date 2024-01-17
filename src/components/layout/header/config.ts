@@ -21,7 +21,7 @@ export interface IHeaderMenu {
   path: string
   type?: string
   icon?: ReactNode
-  subMenu?: never[]
+  subMenu?: IHeaderMenu[]
 }
 export const headerMenuConfig: IHeaderMenu[] = [
   {
@@ -29,6 +29,7 @@ export const headerMenuConfig: IHeaderMenu[] = [
     path: '/',
     type: 'Home',
     icon: h(FaSolidDotCircle),
+    subMenu: null,
   },
   {
     title: '文章',
