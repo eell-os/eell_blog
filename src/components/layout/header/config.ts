@@ -21,7 +21,6 @@ export interface IHeaderMenu {
   path: string
   type?: string
   icon?: ReactNode
-  subMenu?: IHeaderMenu[]
 }
 export const headerMenuConfig: IHeaderMenu[] = [
   {
