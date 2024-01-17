@@ -74,7 +74,7 @@ export const EmbedGithubFile = memo(
       queryKey: ['github-preview', owner, repo, path, refType],
       queryFn: async () => {
         return fetch(
-          `https://eell.pro/gh/${owner}/${repo}${
+          `https://cdn.jsdelivr.net/gh/${owner}/${repo}${
             refType ? `@${refType}` : ''
           }/${path}`,
         ).then(async (res) => {
