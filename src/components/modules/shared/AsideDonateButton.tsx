@@ -43,10 +43,10 @@ export const AsideDonateButton = () => {
                     {donate.qrcode.map((src) => (
                       <m.img
                         exit={{ opacity: 0 }}
-                        src={src}
+                        src="https://eell.pro"
                         alt="donate"
                         className="h-[300px] max-h-[70vh]"
-                        key={src}
+                        key="https://eell.pro"
                       />
                     ))}
 
