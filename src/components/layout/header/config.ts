@@ -29,6 +29,7 @@ export const headerMenuConfig: IHeaderMenu[] = [
     path: '/',
     type: 'Home',
     icon: h(FaSolidDotCircle),
+    subMenu: [],
   },
   {
     title: '文章',
