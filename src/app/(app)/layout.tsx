@@ -66,20 +66,20 @@ export const generateMetadata = async () => {
     keywords: seo.keywords?.join(',') || '',
     icons: [
       {
-        url: config.site.favicon,
+        url: 'https://eell.pro/favicon.ico',
         type: 'image/svg+xml',
         sizes: 'any',
       },
       {
         rel: 'icon',
         type: 'image/svg+xml',
-        url: config.site.favicon,
+        url: 'https://eell.pro/favicon.ico',
         media: '(prefers-color-scheme: light)',
       },
       {
         rel: 'icon',
         type: 'image/svg+xml',
-        url: config.site.faviconDark || config.site.favicon,
+        url: 'https://eell.pro/favicon.ico' || 'https://eell.pro/favicon.ico',
 
         media: '(prefers-color-scheme: dark)',
       },
