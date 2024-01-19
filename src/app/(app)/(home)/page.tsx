@@ -70,7 +70,6 @@ export default function Home() {
 
       <PostScreen />
 
-      <NoteScreen />
       <MoreScreen />
     </div>
   )
