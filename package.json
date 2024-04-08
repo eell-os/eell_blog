@@ -36,7 +36,7 @@
     "prod:reload": "pm2 reload ecosystem.config.js"
   },
   "dependencies": {
-    "@splinetool/runtime": "*",
+    "@splinetool/runtime": "1.0.93",
     "@clerk/nextjs": "4.29.3",
     "@floating-ui/react-dom": "2.0.5",
     "@milkdown/core": "7.3.3",
