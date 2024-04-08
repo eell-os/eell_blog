@@ -22,7 +22,7 @@ overrides:
 dependencies:
   '@splinetool/runtime': 
     specifier: 1.0.93
-    version: 1.0.93
+    version: 1.0.93(next@1.0.93)(react-dom@1.0.93)(react@1.0.93)
   '@clerk/nextjs':
     specifier: 4.29.3
     version: 4.29.3(next@14.0.4)(react-dom@18.2.0)(react@18.2.0)
