@@ -108,6 +108,24 @@ const TwoColumnLayout = ({
   )
 }
 
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <body>
+        <iframe src="https://prod.spline.design/0JyD2Nz1YkaaJp5s/scene.splinecode" width="500" height="500"></iframe>
+      </body>
+    </html>
+  `);
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
 const Welcome = () => {
   const { title, description } = useAppConfigSelector((config) => {
     return {
