@@ -71,6 +71,7 @@ export default function Home() {
       <PostScreen />
 
       <MoreScreen />
+      <MyComponent />
     </div>
   )
 }
