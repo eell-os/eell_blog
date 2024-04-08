@@ -563,7 +563,7 @@ const MyComponent = () => {
     <>
       <div style={{ position: 'fixed', right: '10px', bottom: '10px', width: '300px', height: '200px', zIndex: 1000 }}>
         <iframe
-          src="https://my.spline.design/draganddropkitchencopy-ada259147ad2f9946ed96fea99e6a66e/"
+          src="https://my.spline.design/molang3dcopy-bb20bad5d300c28b5394a9d6577929e8/"
           frameBorder="0"
           style={{ width: '100%', height: '100%' }}
         ></iframe>
