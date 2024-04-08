@@ -1,7 +1,5 @@
 'use client'
 
-import { Application } from '@splinetool/runtime';
-
 import { useQuery } from '@tanstack/react-query'
 import React, { createElement, forwardRef, useCallback, useRef } from 'react'
 import clsx from 'clsx'
@@ -36,11 +34,6 @@ import {
 } from '~/providers/root/aggregation-data-provider'
 
 import { useHomeQueryData } from './query'
-
-
-const canvas = document.getElementById('canvas3d');
-const app = new Application(canvas);
-app.load('https://prod.spline.design/aoCSxjNvC43rBQDK/scene.splinecode');
 
 const debugStyle = {
   outline: '1px solid #0088cc',
