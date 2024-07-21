@@ -170,7 +170,7 @@ const FooterBottom = async () => {
           </SubscribeTextButton>
         </span>
         <span className="mt-3 block md:mt-0 md:inline">
-          萌ICP备20227416号
+          <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024280846号</a>
         </span>
       </p>
       <p>
